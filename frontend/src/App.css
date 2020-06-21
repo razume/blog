@@ -128,8 +128,14 @@ p {
   margin-bottom: 8px;
 }
 .footer-info > * {
+  display: flex;
+  width: 20rem;
+  flex-direction: column;
   background-color: inherit;
   color: inherit;
+}
+.footer-info > * > * {
+  background-color: inherit;
 }
 @keyframes spin {
   from {

@@ -4,6 +4,7 @@ import HomePage from "./components/HomePage";
 import BlogPage from "./components/BlogPage";
 import ProjectsPage from "./components/ProjectsPage";
 import ResumePage from "./components/ResumePage";
+import LoginPage from "./components/LoginPage";
 import "./App.css";
 
 export default function App() {
@@ -98,7 +99,10 @@ export default function App() {
           <a href="https://github.com/razume" target="_blank">
             <img src={require("./media/icons/gh.svg")} />
           </a>
-          <a href="https://www.linkedin.com/in/leighton-pitman/">
+          <a
+            href="https://www.linkedin.com/in/leighton-pitman/"
+            target="_blank"
+          >
             <img src={require("./media/icons/li.svg")} />
           </a>
           <a href="https://www.facebook.com/leighton.pitman" target="_blank">
@@ -109,6 +113,12 @@ export default function App() {
           </a>
         </div>
         <div className="footer-info">
+          <a>
+            <img
+              src={require("./media/icons/crown.svg")}
+              alt="administrator login"
+            />
+          </a>
           &copy; Leighton Pitman 2020 <br />
           <a href="mailto:leightonpitman14@gmail.com">
             leightonpitman14@gmail.com
