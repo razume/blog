@@ -1,0 +1,141 @@
+:root {
+  --anchor-font-color: rgb(70, 70, 70);
+  --anchor-hover: rgb(153, 153, 153);
+  --font-color: rgb(32, 32, 32);
+  --bg-color: rgb(233, 233, 233);
+  --box-shadow-color: rgb(160, 160, 160);
+}
+
+[data-theme="dark"] {
+  --anchor-font-color: rgb(180, 180, 180);
+  --anchor-hover: rgb(124, 124, 124);
+  --font-color: rgb(216, 216, 216);
+  --bg-color: rgb(43, 43, 43);
+  --box-shadow-color: rgb(44, 44, 44);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--anchor-font-color);
+}
+
+a:hover {
+  color: var(--anchor-hover);
+}
+
+h3 {
+  font-size: 22pt;
+}
+h5 {
+  font-size: 14pt;
+  font-style: italic;
+}
+
+p {
+  font-size: 12pt;
+}
+
+#dark-mode-icon {
+  color: var(--anchor-font-color);
+}
+
+#dark-mode-icon:hover {
+  color: var(--anchor-hover);
+  animation: spin 350ms linear 1;
+}
+
+.document-body {
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  height: 3rem;
+  width: 100%;
+}
+
+.nav-home-container {
+  /*background-color: red;*/
+}
+
+.nav-items-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 400;
+}
+
+.page-content-container {
+  color: var(--font-color);
+  font-family: "Vollkorn", serif;
+  width: 85%;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.headshot {
+  height: 8rem;
+  border-radius: 7px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 15px var(--box-shadow-color);
+}
+.footer {
+  font-family: "Vollkorn", serif;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 10rem;
+  color: var(--anchor-hover);
+  background-color: var(--anchor-font-color);
+}
+.footer-content {
+  background-color: inherit;
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+.footer-content > * {
+  background-color: inherit;
+}
+.footer-content > * > * {
+  background-color: inherit;
+}
+.footer-info {
+  text-align: center;
+  width: 20rem;
+  background-color: inherit;
+  margin-bottom: 8px;
+}
+.footer-info > * {
+  background-color: inherit;
+  color: inherit;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
