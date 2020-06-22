@@ -14,7 +14,7 @@ export default function BlogEntry(props) {
       >
         <img
           style={{
-            width: "55%",
+            width: "calc(25vw + 250px)",
             borderRadius: "5px",
           }}
           src={props.imgPath}

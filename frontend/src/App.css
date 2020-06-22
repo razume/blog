@@ -4,6 +4,9 @@
   --font-color: rgb(32, 32, 32);
   --bg-color: rgb(233, 233, 233);
   --box-shadow-color: rgb(160, 160, 160);
+  --input-color: rgb(99, 99, 99);
+  --footer-bg: rgb(156, 156, 156);
+  --footer-font-color: rgb(100, 100, 100);
 }
 
 [data-theme="dark"] {
@@ -11,7 +14,10 @@
   --anchor-hover: rgb(124, 124, 124);
   --font-color: rgb(216, 216, 216);
   --bg-color: rgb(43, 43, 43);
-  --box-shadow-color: rgb(44, 44, 44);
+  --box-shadow-color: rgb(102, 102, 102);
+  --input-color: rgb(75, 75, 75);
+  --footer-bg: rgb(75, 75, 75);
+  --footer-font-color: rgb(0, 0, 0);
 }
 
 * {
@@ -37,6 +43,10 @@ h5 {
   font-style: italic;
 }
 
+label {
+  color: var(--font-color);
+}
+
 p {
   font-size: 12pt;
 }
@@ -47,7 +57,48 @@ p {
 
 #dark-mode-icon:hover {
   color: var(--anchor-hover);
-  animation: spin 350ms linear 1;
+  animation: spin 300ms linear 1;
+}
+#login-page {
+  margin-top: 3rem;
+  color: var(--font-color);
+  font-family: "Vollkorn", serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#login-form {
+  display: flex;
+  flex-direction: column;
+  width: 17rem;
+  margin-bottom: 10rem;
+}
+
+#submit-button {
+  color: rgb(0, 128, 0);
+  height: 1.5rem;
+  width: 6rem;
+  margin: 0 auto;
+  border: none;
+  box-shadow: 1px 1px 9px var(--box-shadow-color);
+  border-radius: 7px;
+  margin-top: 1.25rem;
+  background-color: rgb(90, 199, 90);
+}
+
+#submit-button:hover {
+  background-color: rgb(118, 206, 118);
+}
+
+.text-field {
+  padding-left: 5px;
+  height: 1.3rem;
+  margin-top: 8px;
+  border-radius: 7px;
+  color: var(--font-color);
+  border: 2px solid var(--input-color);
 }
 
 .document-body {
@@ -103,8 +154,8 @@ p {
   justify-content: space-between;
   align-items: center;
   height: 10rem;
-  color: var(--anchor-hover);
-  background-color: var(--anchor-font-color);
+  color: var(--footer-font-color);
+  background-color: var(--footer-bg);
 }
 .footer-content {
   background-color: inherit;

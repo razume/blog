@@ -89,6 +89,9 @@ export default function App() {
           <Route path="/resume">
             <ResumePage />
           </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
           <Route path="/">
             <HomePage />
           </Route>
@@ -113,16 +116,16 @@ export default function App() {
           </a>
         </div>
         <div className="footer-info">
-          <a>
+          <Link to="/login">
             <img
               src={require("./media/icons/crown.svg")}
               alt="administrator login"
             />
-          </a>
-          &copy; Leighton Pitman 2020 <br />
+          </Link>
           <a href="mailto:leightonpitman14@gmail.com">
             leightonpitman14@gmail.com
           </a>
+          &copy; Leighton Pitman 2020
         </div>
       </div>
     </Router>
