@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import BlogPage from "./components/BlogPage";
@@ -8,6 +9,14 @@ import LoginPage from "./components/LoginPage";
 import "./App.css";
 
 export default function App() {
+  const [apiRes, setAPIRes] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/users")
+      .then((response) => console.log(response.data));
+  }, []);
+
   const toggleTheme = () => {
     if (
       !document.documentElement.getAttribute("data-theme") ||
