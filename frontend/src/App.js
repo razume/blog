@@ -13,7 +13,7 @@ export default function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/users")
+      .get("http://localhost:4000/admins")
       .then((response) => console.log(response.data));
   }, []);
 
