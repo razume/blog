@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jwt-simple");
 
 const client = new Client(
-  process.env.DATABASE_URL || "postgres://localhost/blog_db",
+  process.env.DATABASE_URL || "postgres://localhost/blog_db"
 );
 
 client.connect();
@@ -71,7 +71,7 @@ const createUser = async ({ username, password }) => {
   return (
     await client.query(
       "INSERT INTO users(username, password) values ($1, $2) returning *",
-      [username, hashed],
+      [username, hashed]
     )
   ).rows[0];
 };
