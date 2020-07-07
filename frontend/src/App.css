@@ -2,7 +2,7 @@
   --anchor-font-color: rgb(70, 70, 70);
   --anchor-hover: rgb(153, 153, 153);
   --font-color: rgb(32, 32, 32);
-  --bg-color: rgb(233, 233, 233);
+  --bg-color: rgb(255, 255, 255);
   --box-shadow-color: rgb(160, 160, 160);
   --input-color: rgb(99, 99, 99);
   --footer-bg: rgb(156, 156, 156);
@@ -76,6 +76,16 @@ p {
   margin-bottom: 10rem;
 }
 
+#admin-tag {
+  color: rgb(219, 74, 74);
+  font-weight: 600;
+  margin-right: 10px;
+  border: 2px solid rgb(219, 74, 74);
+  font-size: small;
+  padding: 2px;
+  border-radius: 8px;
+}
+
 #submit-button {
   color: rgb(0, 128, 0);
   height: 1.5rem;
@@ -90,6 +100,34 @@ p {
 
 #submit-button:hover {
   background-color: rgb(118, 206, 118);
+}
+
+#logout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#logout-container > * {
+  text-align: center;
+}
+
+#logout-button {
+  font-family: "Vallkhorn", serif;
+  text-decoration: underline;
+  margin-top: 1rem;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 16pt;
+  color: rgb(184, 79, 79);
+  font-weight: 700;
+  margin-left: 6px;
+  border: none;
+}
+
+#logout-button:hover {
+  color: rgb(255, 0, 0);
 }
 
 .text-field {
@@ -146,6 +184,33 @@ p {
   margin-bottom: 10px;
   box-shadow: 1px 1px 15px var(--box-shadow-color);
 }
+
+.blog-links-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.blog-link {
+  font-family: "Vollkorn", serif;
+  font-weight: 400;
+  color: var(--anchor-font-color);
+  border: 0.5px solid var(--anchor-font-color);
+  border-radius: 3px;
+  padding: 5px;
+  list-style-type: none;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+.blog-link:hover {
+  border: 0.5px solid var(--anchor-hover);
+}
+
 .footer {
   font-family: "Vollkorn", serif;
   margin-top: 10rem;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function LoginPage() {
-  const [auth, setAuth] = useState({});
+export default function LoginPage({ auth, setAuth }) {
+  // const [auth, setAuth] = useState({});
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -79,8 +79,14 @@ export default function LoginPage() {
           </form>
         </div>
       ) : (
-        <div>
-          <button onClick={logout}>log out {username}</button>
+        <div id="logout-container">
+          <p>
+            Signed in as {auth.username}. This user has administrative
+            privileges.
+          </p>
+          <button id="logout-button" onClick={logout}>
+            log out
+          </button>
         </div>
       )}
     </div>

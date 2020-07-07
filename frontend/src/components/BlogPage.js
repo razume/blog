@@ -1,25 +1,30 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+  useRouteMatch,
+} from "react-router-dom";
 import BlogEntry from "./BlogEntry";
+import blogs from "../blogPosts.json";
 
 export default function BlogPage() {
-  const firstEntry = {
-    title: "My first blog post",
-    imgPath: require("../media/calculator.jpg"),
-    body:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
-  };
-  const firstEntryTitle = "My very first blog post";
-  const calculatorImgPath = require("../media/calculator.jpg");
-  const firstEntryBody =
-    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.";
+  let { path, url } = useRouteMatch();
 
   return (
     <div>
-      <BlogEntry
-        entryTitle={firstEntry.title}
-        imgPath={firstEntry.imgPath}
-        entryBody={firstEntry.body}
-      />
+      <ul className="blog-links-container">
+        {blogs.map((blog) => {
+          return (
+            <Link className="blog-link" to={`${url}/${blog.id}`}>
+              <li key={blog.id}>{blog.title}</li>
+            </Link>
+          );
+        })}
+      </ul>
+
+      <Route path={`${url}/:entryId`} component={BlogEntry} />
     </div>
   );
 }

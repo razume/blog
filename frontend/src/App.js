@@ -9,6 +9,29 @@ import LoginPage from "./components/LoginPage";
 import "./App.css";
 
 export default function App() {
+  const [auth, setAuth] = useState({});
+
+  useEffect(() => {
+    attemptLoginFromToken();
+  }, []);
+
+  const attemptLoginFromToken = () => {
+    const token = window.localStorage.getItem("token");
+    if (!token) {
+      return;
+    }
+    if (!token) {
+      return;
+    }
+    axios
+      .get("/api/auth", {
+        headers: {
+          authentication: token,
+        },
+      })
+      .then((response) => setAuth(response.data));
+  };
+
   const toggleTheme = () => {
     if (
       !document.documentElement.getAttribute("data-theme") ||
@@ -56,7 +79,19 @@ export default function App() {
               <Link to="/resume">Resume</Link>
             </div>
           </div>
-          <div style={{ marginRight: "8px" }}>
+          <div
+            style={{
+              marginRight: "8px",
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            {auth.id && (
+              <Link to="/login" id="admin-tag">
+                Admin
+              </Link>
+            )}
             <svg
               id="dark-mode-icon"
               width="22"
@@ -71,8 +106,8 @@ export default function App() {
                 fill="currentColor"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
                 fill="currentColor"
               />
@@ -91,7 +126,7 @@ export default function App() {
             <ResumePage />
           </Route>
           <Route path="/login">
-            <LoginPage />
+            <LoginPage auth={auth} setAuth={setAuth} />
           </Route>
           <Route path="/">
             <HomePage />
@@ -100,7 +135,11 @@ export default function App() {
       </div>
       <div className="footer">
         <div className="footer-content">
-          <a href="https://github.com/razume" target="_blank">
+          <a
+            href="https://github.com/razume"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={require("./media/icons/gh.svg")} />
           </a>
           <a
