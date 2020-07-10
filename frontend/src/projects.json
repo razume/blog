@@ -4,32 +4,32 @@
     "description": "an overdone Star Wars-themed front end built with vanilla CSS.",
     "screenshots": [],
     "links": ["https://github.com/razume/frontend-starwars"],
-    "id": "1"
+    "id": "01"
   },
   {
     "title": "Productivity Score",
     "description": "Full-stack productivity tracker that calculates a score based on how productive or unproductive you've been. Build with React, Express/Node, PostgreSQL",
     "screenshots": [],
     "links": ["https://github.com/razume/prod_tracker"],
-    "id": "2"
+    "id": "02"
   },
   {
     "title": "Surf Station - online Surf Shop",
     "description": "E-Commerce store for purchasing surfing equipment. This site is for demonstration purchases. I built this alongside Tanner Byers and Tristan Cruz, two of my former classmates at Fullstack Academy. Shoppers can browse as guests or login. We built the authentication with JWTs and Bcrypt. Material UI was used on the frontend. This app was built with the PERN (PostgreSQL, Express, React, Node) stack.",
     "screenshots": [],
     "links": [],
-    "id": "3"
+    "id": "03"
   },
   {
     "title": "Scribe - Transcribe Zoom Meetings",
     "description": "Zoom extension that transcribes recorded meetings. Users can sign in with their Zoom credentials and are authenticated with Oauth2. The frontend was built with React and Material UI. The backend is Node and Express with MongoDB. I built this app alongside Tristan Cruz and Tanner Byers.",
     "screenshots": [],
-    "id": "4"
+    "id": "04"
   },
   {
     "title": "COVID Tracker",
     "description": "Zoom extension that transcribes recorded meetings. Users can sign in with their Zoom credentials and are authenticated with Oauth2. The frontend was built with React and Material UI. The backend is Node and Express with MongoDB. I built this app alongside Tristan Cruz and Tanner Byers.",
     "screenshots": [],
-    "id": "5"
+    "id": "05"
   }
 ]

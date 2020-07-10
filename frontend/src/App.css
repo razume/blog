@@ -52,6 +52,7 @@ p {
 }
 
 #dark-mode-icon {
+  cursor: pointer;
   color: var(--anchor-font-color);
 }
 
@@ -140,6 +141,12 @@ p {
 }
 
 .document-body {
+  position: relative;
+  min-height: 100vh;
+}
+
+.page-content {
+  padding-bottom: 5rem;
 }
 
 .nav-bar {
@@ -170,7 +177,7 @@ p {
 .page-content-container {
   color: var(--font-color);
   font-family: "Vollkorn", serif;
-  width: 85%;
+  width: 65%;
   padding: 1rem;
   margin: 0 auto;
 }
@@ -187,7 +194,7 @@ p {
 
 .blog-links-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -195,25 +202,52 @@ p {
 
 .blog-link {
   font-family: "Vollkorn", serif;
+  /* text-decoration: underline; */
+  font-size: large;
   font-weight: 400;
   color: var(--anchor-font-color);
-  border: 0.5px solid var(--anchor-font-color);
   border-radius: 3px;
   padding: 5px;
   list-style-type: none;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   margin-right: 0.25rem;
   margin-left: 0.25rem;
 }
 
-.blog-link:hover {
-  border: 0.5px solid var(--anchor-hover);
+.floating-back-button {
+  cursor: pointer;
+  position: fixed;
+  bottom: 60px;
+  font-family: serif;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: x-large;
+  margin-left: 2rem;
+  border-radius: 50%;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 5px var(--box-shadow-color);
+  border: 1px solid rgb(119, 119, 119);
+  background-color: rgb(255, 255, 255);
+}
+
+.floating-back-button > * {
+  background-color: inherit;
+}
+
+.floating-back-button:hover {
+  box-shadow: 1px 1px 15px var(--box-shadow-color);
 }
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
   font-family: "Vollkorn", serif;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -259,5 +293,11 @@ p {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .page-content-container {
+    width: 85%;
   }
 }
