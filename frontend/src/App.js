@@ -47,8 +47,10 @@ export default function App() {
 
   return (
     <Router>
-      <div className="document-body">
-        <div className="page-content">
+      <div
+        style={{ display: "flex", flexDirection: "column", height: "100vh" }}
+      >
+        <div className="body-wrapper">
           <nav className="nav-bar">
             <div className="nav-home-container">
               <div className="nav-item">
@@ -122,30 +124,41 @@ export default function App() {
             </div>
           </nav>
 
-          <Switch>
-            <Route path="/blog">
-              <BlogPage
-                selectedPost={selectedPost}
-                setSelectedPost={setSelectedPost}
-              />
-            </Route>
-            <Route path="/projects">
-              <ProjectsPage
-                selectedProject={selectedProject}
-                setSelectedProject={setSelectedProject}
-              />
-            </Route>
-            <Route path="/resume">
-              <ResumePage />
-            </Route>
-            <Route path="/login">
-              <LoginPage auth={auth} setAuth={setAuth} />
-            </Route>
-            <Route path="/">
-              <HomePage />
-            </Route>
-          </Switch>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <div className="content-wrapper">
+              <Switch>
+                <Route path="/blog">
+                  <BlogPage
+                    selectedPost={selectedPost}
+                    setSelectedPost={setSelectedPost}
+                  />
+                </Route>
+                <Route path="/projects">
+                  <ProjectsPage
+                    selectedProject={selectedProject}
+                    setSelectedProject={setSelectedProject}
+                  />
+                </Route>
+                <Route path="/resume">
+                  <ResumePage />
+                </Route>
+                <Route path="/login">
+                  <LoginPage auth={auth} setAuth={setAuth} />
+                </Route>
+                <Route path="/">
+                  <HomePage />
+                </Route>
+              </Switch>
+            </div>
+          </div>
         </div>
+
         <footer className="footer">
           <div className="footer-content">
             <a
