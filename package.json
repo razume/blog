@@ -3,5 +3,9 @@
   "private": true,
   "devDependencies": {
     "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "start": "cd packages/frontend && npm start && cd ../backend && npm start",
+    "build": "cd packages/frontend && npm build && cd ../backend && npm start"
   }
 }
