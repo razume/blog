@@ -119,7 +119,7 @@ export default function ResumePage() {
               </ul>
             </li>
             <li style={{ fontWeight: "bold" }}>
-              Financial Assistant |
+              Researcher |
               <span style={styles.jobSpan}>
                 {" "}
                 Learning Systems Institute (January 2015 - May 2018)

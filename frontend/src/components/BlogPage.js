@@ -27,7 +27,10 @@ export default function BlogPage({ selectedPost, setSelectedPost }) {
             {blogs.map((blog) => {
               return (
                 <li
-                  style={{ listStyleType: "none", margin: "0.25rem" }}
+                  style={{
+                    listStyleType: "none",
+                    margin: "0.25rem",
+                  }}
                   key={blog.id}
                 >
                   <Link

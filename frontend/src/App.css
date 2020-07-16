@@ -1,5 +1,6 @@
 :root {
   --anchor-font-color: rgb(136, 192, 245);
+  /* --anchor-font-color: rgb(98, 207, 134); //green accent */
   --anchor-hover: rgb(98, 129, 165);
   --font-color: rgb(94, 94, 109);
   --bg-color: rgb(255, 255, 255);
@@ -9,6 +10,7 @@
   --footer-bg: rgb(156, 156, 156);
   --footer-font-color: rgb(100, 100, 100);
   --footer-wave-color: rgb(231, 245, 255);
+  /* --footer-wave-color: rgb(231, 255, 235); // green accent */
 }
 
 [data-theme="dark"] {
@@ -195,6 +197,7 @@ p {
 }
 
 .blog-links-container {
+  border-left: 1px solid var(--font-color);
   margin: 0 auto;
   width: fit-content;
   display: flex;
